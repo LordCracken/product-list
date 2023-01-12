@@ -4,7 +4,7 @@ import { useStore } from '../../hooks/store';
 import './ProductItem.css';
 
 const ProductItem = ({ id, title, description, isFav }) => {
-  const dispatch = useStore().at(1);
+  const dispatch = useStore(false).at(1);
 
   const toggleFavHandler = () => {
     dispatch('TOGGLE_FAV', id);
