@@ -1,14 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useContext } from 'react';
 
 import Card from '../UI/Card';
+
+import { ProductContext } from '../../context/product-context';
 import './ProductItem.css';
-import { toggleFav } from '../../store/actions/products';
 
 const ProductItem = ({ id, title, description, isFav }) => {
-  const dispatch = useDispatch();
+  const toggleFav = useContext(ProductContext).toggleFav;
 
   const toggleFavHandler = () => {
-    dispatch(toggleFav(id));
+    toggleFav(id);
   };
 
   return (
